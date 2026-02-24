@@ -57,9 +57,17 @@ export const run = async (): Promise<void> => {
   }
 
   console.log(6)
-  await execa(codePath, ['tunnel', '--accept-server-license-terms'], {
-    stdio: [process.stdin, process.stdout, process.stderr]
-  })
+
+  if (platform() === 'win32') {
+    await execa(codePath, ['tunnel', '--accept-server-license-terms'], {
+      stdio: [process.stdin, process.stdout, process.stderr],
+      shell: true
+    })
+  } else {
+    await execa(codePath, ['tunnel', '--accept-server-license-terms'], {
+      stdio: [process.stdin, process.stdout, process.stderr]
+    })
+  }
 }
 
 /**

@@ -46,7 +46,10 @@ export const run = async (): Promise<void> => {
     new Promise((resolve) => setTimeout(() => resolve(false), timeout)),
     execa(
       codePath,
-      ['tunnel', '--accept-server-license-terms', 'rename', machineId]
+      ['tunnel', '--accept-server-license-terms', 'rename', machineId], {
+        stdio: [process.stdin, process.stdout, process.stderr],
+        shell: true
+      }
     ).then(() => true)
   ])
 

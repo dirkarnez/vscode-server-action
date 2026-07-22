@@ -25002,7 +25002,8 @@ const run = async () => {
         return process.exit(0);
     }
     await (0,execa__WEBPACK_IMPORTED_MODULE_3__/* .execa */ .r)(tunnelCommand.command, [...tunnelCommand.args, '--accept-server-license-terms'], {
-        stdio: 'inherit'
+        stdio: 'inherit',
+        cwd: (0,_actions_core__WEBPACK_IMPORTED_MODULE_5__.getInput)('cwd') || process.cwd()
     });
 };
 /**

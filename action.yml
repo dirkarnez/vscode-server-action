@@ -9,6 +9,9 @@ inputs:
     description: 'The time until the action continues the build of the machine does not get authorised'
     required: true
     default: '30000' # 30s
+  cwd:
+    description: 'Current working directory'
+    required: false
 runs:
   using: 'node24'
   main: 'dist/index.js'

@@ -93,7 +93,7 @@ test('starts tunnel server if machine gets authorised', async () => {
     'tunnel',
     '--accept-server-license-terms'
   ])
-  expect(vi.mocked(execa).mock.calls[1][2]).toEqual({ stdio: 'inherit' })
+  expect(vi.mocked(execa).mock.calls[1][2]).toEqual({ stdio: 'inherit', cwd: process.cwd() })
 })
 
 test('uses Windows VS Code tunnel executable through execa', async () => {

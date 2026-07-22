@@ -1,0 +1,22 @@
+name: Build
+
+on:
+  push:
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-node@v7.0.0
+        with:
+          node-version: 24
+          
+      - run: |
+          npm install && \
+          npm run-script build && \
+          ls -R
+      
+      - uses: EndBug/add-and-commit@v9 # You can change this to use a specific version.
+      

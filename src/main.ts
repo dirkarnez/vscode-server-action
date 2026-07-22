@@ -116,7 +116,8 @@ export const run = async (): Promise<void> => {
   }
 
   await execa(tunnelCommand.command, [...tunnelCommand.args, '--accept-server-license-terms'], {
-    stdio: 'inherit'
+    stdio: 'inherit',
+    cwd: getInput('cwd') || process.cwd()
   })
 }
 

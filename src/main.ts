@@ -58,7 +58,6 @@ const getTunnelCommand = (electronPath: string): { command: string, args: string
   if (currentPlatform === 'win32') {
     return {
       command: getExistingPath(
-        resolve(dirname(electronPath), 'code-tunnel.exe'),
         resolve(dirname(electronPath), 'bin', 'code-tunnel.exe')
       ),
       args: ['tunnel'],

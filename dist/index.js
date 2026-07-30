@@ -24958,7 +24958,7 @@ const getTunnelCommand = (electronPath) => {
     }
     if (currentPlatform === 'win32') {
         return {
-            command: getExistingPath((0,node_path__WEBPACK_IMPORTED_MODULE_0__.resolve)((0,node_path__WEBPACK_IMPORTED_MODULE_0__.dirname)(electronPath), 'code-tunnel.exe'), (0,node_path__WEBPACK_IMPORTED_MODULE_0__.resolve)((0,node_path__WEBPACK_IMPORTED_MODULE_0__.dirname)(electronPath), 'bin', 'code-tunnel.exe')),
+            command: getExistingPath((0,node_path__WEBPACK_IMPORTED_MODULE_0__.resolve)((0,node_path__WEBPACK_IMPORTED_MODULE_0__.dirname)(electronPath), 'bin', 'code-tunnel.exe')),
             args: ['tunnel'],
             executable: false
         };

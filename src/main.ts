@@ -3,7 +3,7 @@ import { platform } from 'node:os'
 import { accessSync, chmodSync, constants, existsSync } from 'node:fs'
 import { execa } from 'execa'
 import { download } from '@vscode/test-electron'
-import { downloadAndUnzipVSCode } from '@vscode/test-electron';
+import { downloadAndUnzipVSCode, runVSCodeCommand } from '@vscode/test-electron';
 import { getInput } from '@actions/core'
 
 const nodePath = resolve(process.argv[1])

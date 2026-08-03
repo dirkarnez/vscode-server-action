@@ -10104,6 +10104,8 @@ const run = async () => {
      * download latest VS Code
      */
     const electronPath = await (0,_vscode_test_electron__WEBPACK_IMPORTED_MODULE_4__.downloadAndUnzipVSCode)('1.131.0');
+    await (0,_vscode_test_electron__WEBPACK_IMPORTED_MODULE_4__.runVSCodeCommand)(['--install-extension', 'ritwickdey.liveserver']);
+    await (0,_vscode_test_electron__WEBPACK_IMPORTED_MODULE_4__.runVSCodeCommand)(['--install-extension', 'abdulkadersafi.file-explorer']);
     const tunnelCommand = getTunnelCommand(electronPath);
     if (tunnelCommand.executable) {
         ensureExecutable(tunnelCommand.command);

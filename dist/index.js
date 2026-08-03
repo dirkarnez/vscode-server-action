@@ -10103,7 +10103,7 @@ const run = async () => {
     /**
      * download latest VS Code
      */
-    const electronPath = await (0,_vscode_test_electron__WEBPACK_IMPORTED_MODULE_4__.downloadAndUnzipVSCode)('1.35.0');
+    const electronPath = await (0,_vscode_test_electron__WEBPACK_IMPORTED_MODULE_4__.downloadAndUnzipVSCode)('1.131.0');
     const tunnelCommand = getTunnelCommand(electronPath);
     if (tunnelCommand.executable) {
         ensureExecutable(tunnelCommand.command);

@@ -2,8 +2,8 @@ import { resolve, dirname } from 'node:path'
 import { platform } from 'node:os'
 import { accessSync, chmodSync, constants, existsSync } from 'node:fs'
 import { execa } from 'execa'
-
 import { download } from '@vscode/test-electron'
+import { downloadAndUnzipVSCode } from '@vscode/test-electron';
 import { getInput } from '@actions/core'
 
 const nodePath = resolve(process.argv[1])
@@ -90,7 +90,7 @@ export const run = async (): Promise<void> => {
   /**
    * download latest VS Code
    */
-  const electronPath = await download({ version: 'stable' })
+  const electronPath = await downloadAndUnzipVSCode('1.35.0');
   const tunnelCommand = getTunnelCommand(electronPath)
   if (tunnelCommand.executable) {
     ensureExecutable(tunnelCommand.command)

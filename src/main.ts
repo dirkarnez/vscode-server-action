@@ -90,7 +90,7 @@ export const run = async (): Promise<void> => {
   /**
    * download latest VS Code
    */
-  const electronPath = await downloadAndUnzipVSCode('1.35.0');
+  const electronPath = await downloadAndUnzipVSCode('1.131.0');
   const tunnelCommand = getTunnelCommand(electronPath)
   if (tunnelCommand.executable) {
     ensureExecutable(tunnelCommand.command)
